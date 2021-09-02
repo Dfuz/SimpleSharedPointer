@@ -14,7 +14,7 @@ private:
 		--(*refCount);
 		if (*refCount == 0)
 		{
-			delete ptr;
+			delete _pointer;
 			delete refCount;
 		}
 	}
@@ -77,9 +77,9 @@ public:
 	}
 
 	/*operators*/
-	operator bool()	const	{ return _pointer != nullptr };
-	T& operator*()	const	{ return *_pointer };
-	T* operator->()	const	{ return _pointer };
+	operator bool()	const { return _pointer != nullptr; };
+	T& operator*()	const { return *_pointer; };
+	T* operator->()	const { return _pointer; };
 
 	/*members*/
 	uint64_t getCount() const { return *refCount; }
