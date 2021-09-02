@@ -67,10 +67,10 @@ public:
 
 	~SharedPointer()
 	{
-		cout << "Decrementing destructor!" << endl;
+		std::cout << "Decrementing destructor!" << std::endl;
 		if (--(*refCount) == 0)
 		{
-			cout << "Memory free!" << endl;
+			std::cout << "Memory free!" << std::endl;
 			delete refCount;
 			delete _pointer;
 		}
